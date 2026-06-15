@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
