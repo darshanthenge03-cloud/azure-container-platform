@@ -236,7 +236,7 @@ The workflow is currently executed manually through GitHub Actions.
 
 ## Architecture Diagram
 
-![Architecture](architecture/architecture.png)
+![Architecture](architecture/architecture.PNG)
 
 ---
 
