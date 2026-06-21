@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Azure DevOps Platform Project v2"
+    return "Azure DevOps Platform Project"
+    return "Version 2 deployed via GitHub Actions"
 
 @app.route("/health")
 def health():
