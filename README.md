@@ -235,7 +235,7 @@ This enables fully automated application deployments.
 
 ## Running Application
 
-![Application](architecture/app-url.png)
+![Application](architecture/app-url1.png)
 
 ---
 
