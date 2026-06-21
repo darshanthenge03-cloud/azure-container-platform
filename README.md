@@ -252,25 +252,6 @@ The workflow is currently executed manually through GitHub Actions.
 
 ---
 
-# 💡 Lessons Learned
-
-Building this project provided practical experience with several real-world Azure DevOps challenges.
-
-Some of the issues encountered during implementation included:
-
-- Azure CLI authentication blocked by Conditional Access.
-- Device Code Flow restrictions.
-- Terraform state synchronization.
-- Azure provider registration.
-- Azure Container Registry authentication.
-- Service Principal configuration.
-- GitHub Actions troubleshooting.
-- Container deployment debugging.
-
-Working through these challenges provided valuable hands-on experience with Azure DevOps practices and troubleshooting scenarios.
-
----
-
 # 🎯 Project Objectives
 
 This project was created to gain practical experience with:
