@@ -10,12 +10,12 @@
 
 <p align="center">
 
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge\&logo=microsoftazure\&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-623CE4?style=for-the-badge\&logo=terraform\&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge\&logo=docker\&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge\&logo=github-actions\&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge\&logo=flask)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-623CE4?style=for-the-badge&logo=terraform&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask)
 
 </p>
 
@@ -29,24 +29,34 @@
 
 ---
 
-# Project Overview
+# 📖 Project Overview
 
-This repository demonstrates a complete Azure DevOps workflow built using modern cloud-native technologies.
+This project demonstrates a complete Azure DevOps implementation using modern cloud-native technologies.
 
-The project provisions Azure infrastructure using Terraform, containerizes a Python Flask application using Docker, stores images in Azure Container Registry, and deploys applications automatically to Azure Container Apps using GitHub Actions.
+The solution provisions Azure infrastructure using Terraform, containerizes a Flask-based web application using Docker, stores images within Azure Container Registry, and deploys applications automatically to Azure Container Apps using GitHub Actions.
 
-The objective was not only to deploy an application but also to implement the practices commonly used in real DevOps environments:
-
-* Infrastructure as Code
-* CI/CD automation
-* Containerized workloads
-* Centralized logging
-* Application monitoring
-* Secure Azure authentication
+The application itself is designed as an Azure DevOps Dashboard that visually represents the deployment platform, cloud architecture, and CI/CD workflow used throughout the project.
 
 ---
 
-# Architecture
+# 🌐 Application Dashboard
+
+The dashboard provides a visual representation of the cloud platform and deployment architecture.
+
+Features include:
+
+- Responsive Bootstrap UI
+- Azure-themed design
+- Technology stack overview
+- Deployment information
+- Environment status
+- Monitoring integration details
+- Health endpoint
+- Containerized deployment
+
+---
+
+# 🏗 Architecture
 
 ```mermaid
 flowchart TD
@@ -70,7 +80,7 @@ F --> I[Public HTTPS Endpoint]
 
 ---
 
-# CI/CD Workflow
+# 🔄 CI/CD Workflow
 
 ```mermaid
 flowchart LR
@@ -79,56 +89,61 @@ A[Code Change] --> B[Git Commit]
 
 B --> C[Git Push]
 
-C --> D[GitHub Actions]
+C --> D[Manual Workflow Trigger]
 
-D --> E[Build Docker Image]
+D --> E[GitHub Actions]
 
-E --> F[Push Image to ACR]
+E --> F[Build Docker Image]
 
-F --> G[Update Container App]
+F --> G[Push Image to ACR]
 
-G --> H[Application Deployment]
+G --> H[Deploy Container App]
+
+H --> I[Application Updated]
 ```
 
 ---
 
-# Azure Resources
+# ☁ Azure Resources
 
-| Resource                   | Purpose                       |
-| -------------------------- | ----------------------------- |
-| Resource Group             | Logical resource organization |
-| Azure Container Registry   | Docker image repository       |
-| Log Analytics Workspace    | Centralized logging           |
-| Application Insights       | Application monitoring        |
-| Container Apps Environment | Managed container platform    |
-| Azure Container App        | Application hosting           |
-
----
-
-# Technology Stack
-
-| Category         | Technologies         |
-| ---------------- | -------------------- |
-| Programming      | Python, Flask        |
-| Containerization | Docker               |
-| Infrastructure   | Terraform            |
-| Cloud Platform   | Microsoft Azure      |
-| CI/CD            | GitHub Actions       |
-| Monitoring       | Application Insights |
-| Logging          | Log Analytics        |
-| Source Control   | Git, GitHub          |
+| Resource | Purpose |
+|---------|----------|
+| Resource Group | Resource Organization |
+| Azure Container Registry | Docker Image Storage |
+| Log Analytics Workspace | Centralized Logging |
+| Application Insights | Application Monitoring |
+| Container Apps Environment | Managed Runtime |
+| Azure Container App | Application Hosting |
 
 ---
 
-# Repository Structure
+# 🛠 Technology Stack
+
+| Category | Technologies |
+|---------|-------------|
+| Programming | Python, Flask |
+| Frontend | HTML, Bootstrap |
+| Containerization | Docker |
+| Infrastructure | Terraform |
+| Cloud Platform | Microsoft Azure |
+| CI/CD | GitHub Actions |
+| Monitoring | Application Insights |
+| Logging | Log Analytics |
+| Version Control | Git, GitHub |
+
+---
+
+# 📂 Repository Structure
 
 ```text
 azure-container-platform
 │
 ├── app
 │   ├── app.py
+│   ├── Dockerfile
 │   ├── requirements.txt
-│   └── Dockerfile
+│   └── templates
+│       └── index.html
 │
 ├── terraform
 │   ├── main.tf
@@ -148,9 +163,9 @@ azure-container-platform
 
 ---
 
-# Infrastructure Deployment
+# ⚙ Infrastructure Deployment
 
-Infrastructure provisioning is managed entirely through Terraform.
+Infrastructure provisioning is managed using Terraform.
 
 ```bash
 terraform init
@@ -160,13 +175,13 @@ terraform plan
 terraform apply
 ```
 
-Resources are provisioned automatically within Azure.
+Resources are automatically provisioned within Azure.
 
 ---
 
-# Container Workflow
+# 🐳 Application Containerization
 
-Application images are built and stored within Azure Container Registry.
+The Flask dashboard is containerized using Docker and stored within Azure Container Registry.
 
 ```bash
 docker build -t devops-platform:v1 .
@@ -178,42 +193,46 @@ docker push darshanacr001.azurecr.io/devops-platform:v1
 
 ---
 
-# GitHub Actions Pipeline
+# 🚀 Deployment Process
 
-Every push to the main branch triggers the deployment workflow.
+The deployment workflow performs the following operations:
 
-The pipeline performs the following tasks:
+- Checkout source code
+- Authenticate with Azure
+- Build Docker image
+- Push image to Azure Container Registry
+- Deploy latest container image
+- Update Azure Container App
 
-* Checkout source code
-* Authenticate with Azure
-* Build Docker image
-* Push image to Azure Container Registry
-* Update Azure Container App
-* Deploy latest application revision
-
-This enables fully automated application deployments.
+The workflow is currently executed manually through GitHub Actions.
 
 ---
 
-# Monitoring and Observability
+# 📈 Monitoring and Observability
 
 ### Application Insights
 
-* Request tracking
-* Failure monitoring
-* Performance analysis
-* Application telemetry
+- Request Monitoring
+- Performance Analysis
+- Exception Tracking
+- Application Telemetry
 
 ### Log Analytics
 
-* Container logs
-* Deployment logs
-* Application logs
-* Troubleshooting information
+- Container Logs
+- Deployment Logs
+- Application Logs
+- Troubleshooting Information
 
 ---
 
-# Screenshots
+# 📸 Screenshots
+
+## Azure DevOps Dashboard
+
+![Dashboard](architecture/app-url1.png)
+
+---
 
 ## Architecture Diagram
 
@@ -233,69 +252,81 @@ This enables fully automated application deployments.
 
 ---
 
-## Running Application
+# 💡 Lessons Learned
 
-![Application](architecture/app-url1.png)
+Building this project provided practical experience with several real-world Azure DevOps challenges.
 
----
+Some of the issues encountered during implementation included:
 
-# Why Azure Container Apps?
+- Azure CLI authentication blocked by Conditional Access.
+- Device Code Flow restrictions.
+- Terraform state synchronization.
+- Azure provider registration.
+- Azure Container Registry authentication.
+- Service Principal configuration.
+- GitHub Actions troubleshooting.
+- Container deployment debugging.
 
-Azure Container Apps provides a serverless container platform that eliminates the need to manage Kubernetes clusters.
-
-It allows applications to:
-
-* Scale automatically.
-* Integrate with Azure monitoring services.
-* Deploy directly from container registries.
-* Reduce operational complexity.
-
-For small and medium workloads, Container Apps provides a simpler alternative to AKS.
+Working through these challenges provided valuable hands-on experience with Azure DevOps practices and troubleshooting scenarios.
 
 ---
 
-# Future Improvements
+# 🎯 Project Objectives
 
-Planned enhancements include:
+This project was created to gain practical experience with:
 
-* Multi-environment deployments (Dev/UAT/Prod)
-* Remote Terraform backend
-* Infrastructure pipelines
-* AKS implementation
-* Blue-Green deployments
-* Autoscaling policies
-* Custom domains
-* SSL certificates
-
----
-
-# Resume Summary
-
-Built an end-to-end Azure container platform using Terraform, Docker, GitHub Actions, Azure Container Registry, Azure Container Apps, Application Insights, and Log Analytics.
-
-Implemented Infrastructure as Code, CI/CD pipelines, application monitoring, centralized logging, and automated deployments using Microsoft Azure services.
+- Infrastructure as Code
+- Containerized applications
+- CI/CD implementation
+- Azure cloud services
+- Application monitoring
+- Deployment automation
+- DevOps workflows
 
 ---
 
-# Author
+# 🚀 Future Enhancements
+
+Planned improvements include:
+
+- Multi-environment deployments
+- Remote Terraform backend
+- AKS deployment
+- Blue-Green deployment strategy
+- Autoscaling rules
+- Custom domains
+- SSL certificates
+- Environment approvals
+
+---
+
+# 💼 Project Outcome
+
+This project demonstrates the implementation of an end-to-end Azure DevOps workflow using modern cloud-native services.
+
+The solution combines Infrastructure as Code, containerization, CI/CD automation, application monitoring, and managed container hosting on Microsoft Azure.
+
+The project was built to gain practical experience with real-world DevOps workflows and Azure platform services.
+
+---
+
+# 👨‍💻 Author
 
 ### Darshan Thenge
 
 Cloud Engineer | Azure | Terraform | DevOps
 
 GitHub:
+
 https://github.com/darshanthenge03-cloud
 
 LinkedIn:
+
 https://www.linkedin.com/in/darshan-thenge-933394121/
 
 ---
 
 <div align="center">
-
-### If you found this project interesting, please consider giving it a ⭐
-
+### ⭐ If you found this project interesting, please consider giving it a star.
 </div>
-
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0078D4,100:623CE4&height=120&section=footer"/>
-
