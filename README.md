@@ -287,7 +287,7 @@ GitHub:
 https://github.com/darshanthenge03-cloud
 
 LinkedIn:
-(Add your LinkedIn profile)
+https://www.linkedin.com/in/darshan-thenge-933394121/
 
 ---
 
