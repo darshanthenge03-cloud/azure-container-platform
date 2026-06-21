@@ -21,3 +21,7 @@ output "log_analytics_workspace_id" {
 output "application_insights_name" {
   value = azurerm_application_insights.appi.name
 }
+
+output "container_app_url" {
+  value = azurerm_container_app.app.latest_revision_fqdn
+}
