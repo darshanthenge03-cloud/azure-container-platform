@@ -239,24 +239,6 @@ This enables fully automated application deployments.
 
 ---
 
-# Lessons Learned
-
-Building this project provided practical experience with several real-world Azure DevOps challenges.
-
-Some of the issues encountered during implementation included:
-
-* Azure CLI authentication blocked by Conditional Access policies.
-* Terraform state synchronization issues.
-* Azure provider registration requirements.
-* Azure Container Registry authentication.
-* Service Principal authentication for CI/CD.
-* Container App deployment troubleshooting.
-* GitHub Actions configuration and debugging.
-
-Working through these problems provided hands-on experience beyond simply deploying Azure resources.
-
----
-
 # Why Azure Container Apps?
 
 Azure Container Apps provides a serverless container platform that eliminates the need to manage Kubernetes clusters.
