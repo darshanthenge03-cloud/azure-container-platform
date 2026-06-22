@@ -152,6 +152,10 @@ azure-container-platform
 │   └── provider.tf
 │
 ├── architecture
+│   ├── app-url1.png
+│   ├── architecture.png
+│   ├── azure-resources.png
+│   └── github-actions.png
 │
 ├── .github
 │   └── workflows
